@@ -1,3 +1,100 @@
 .Socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+}
+
+.socialGrid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    width: 100%;
+}
+
+.socialItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socialLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: #666;
     
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+        color: #333;
+        transform: translateY(-2px);
+    }
+    
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+.iconWrapper {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    svg {
+        width: 100%;
+        height: 100%;
+        transition: all 0.2s ease;
+    }
+}
+
+.divider {
+    width: 1px;
+    height: 20px;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.1) 20%,
+        rgba(0, 0, 0, 0.2) 50%,
+        rgba(0, 0, 0, 0.1) 80%,
+        transparent 100%
+    );
+    margin: 0 0.5rem;
+    border-radius: 0.5px;
+}
+
+// Specific hover colors for each platform
+.socialLink:hover {
+    &:nth-child(1) { // GitHub
+        color: #333;
+    }
+    
+    &:nth-child(1):has([aria-label*="GitHub"]) {
+        color: #333;
+    }
+}
+
+// Alternative approach using data attributes for specific colors
+.socialLink[aria-label*="GitHub"]:hover {
+    color: #333;
+}
+
+.socialLink[aria-label*="X"]:hover {
+    color: #000;
+}
+
+.socialLink[aria-label*="LinkedIn"]:hover {
+    color: #0077b5;
+}
+
+.socialLink[aria-label*="Instagram"]:hover {
+    color: #e4405f;
 }
