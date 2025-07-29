@@ -5,7 +5,7 @@ import GridWrapper from './components/GridWrapper';
 const App = () => {
     return (
         <div className={styles.App}>
-            <GridWrapper />
+            <GridWrapper columns={9} />
         </div>
     );
 };
