@@ -1,0 +1,159 @@
+.Description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #2c2c2c, #252422);
+    overflow-y: auto;
+    
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 2px;
+    }
+    
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.3);
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 100%;
+    width: 100%;
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sectionHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e41010 0%, #8a1859 100%);
+    flex-shrink: 0;
+}
+
+.label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #fffaf5;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.paragraph {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #e2e2e2;
+    margin: 0;
+    text-align: left;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.dividerLine {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(198, 198, 198, 0.862) 50%,
+        transparent 100%
+    );
+}
+
+.dividerDot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #c2c3c6 0%, #ffb5b5 100%);
+    flex-shrink: 0;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+    .Description {
+        padding: 1rem;
+    }
+    
+    .paragraph {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        padding-left: 0.75rem;
+    }
+    
+    .content {
+        gap: 1.25rem;
+    }
+    
+    .section {
+        gap: 0.5rem;
+    }
+}
+
+// Small module adjustments
+@media (max-height: 300px) {
+    .Description {
+        padding: 0.75rem;
+    }
+    
+    .paragraph {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        padding-left: 0.5rem;
+    }
+    
+    .content {
+        gap: 1rem;
+    }
+    
+    .section {
+        gap: 0.4rem;
+    }
+    
+    .sectionHeader {
+        margin-bottom: 0.1rem;
+    }
+    
+    .label {
+        font-size: 0.75rem;
+    }
+    
+    .dot {
+        width: 5px;
+        height: 5px;
+    }
+}

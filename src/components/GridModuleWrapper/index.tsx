@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from 'react';
 import styles from "./GridModuleWrapper.module.scss";
 
 // Grid position can be defined in multiple ways for flexibility
@@ -13,6 +14,7 @@ interface GridModuleWrapperProps {
     cols?: GridPosition;
     rows?: GridPosition;
     className?: string;
+    overlayMessage?: string;
 }
 
 const formatGridPosition = (position?: GridPosition): string | undefined => {
@@ -43,20 +45,62 @@ const GridModuleWrapper = ({
     title, 
     cols, 
     rows, 
-    className 
+    className,
+    overlayMessage 
 }: GridModuleWrapperProps) => {
+    const [showOverlay, setShowOverlay] = useState(false);
+    const timeoutRef = useRef<number | null>(null);
+    
     const gridStyle = {
         gridColumn: formatGridPosition(cols),
         gridRow: formatGridPosition(rows)
     };
+
+    const handleMouseEnter = () => {
+        if (overlayMessage) {
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
+            
+            setShowOverlay(true);
+            
+            timeoutRef.current = setTimeout(() => {
+                setShowOverlay(false);
+            }, 2000);
+        }
+    };
+
+    const handleMouseLeave = () => {
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+        }
+        setShowOverlay(false);
+    };
+
+    useEffect(() => {
+        return () => {
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
+        };
+    }, []);
 
     return (
         <div 
             className={`${styles.GridModuleWrapper} ${className || ''}`} 
             style={gridStyle}
             data-title={title}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
         >
             {children}
+            {overlayMessage && (
+                <div className={`${styles.overlay} ${showOverlay ? styles.overlayVisible : ''}`}>
+                    <div className={styles.overlayContent}>
+                        <p className={styles.overlayMessage}>{overlayMessage}</p>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

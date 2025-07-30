@@ -5,13 +5,15 @@
     width: 100%;
     height: 100%;
     padding: 1rem;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    color: white;
 }
 
 .time {
     font-size: 5rem;
     font-weight: 600;
     font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
-    color: #333;
+    color: white;
     letter-spacing: 0.1em;
     text-align: center;
     line-height: 1;

@@ -1,6 +1,45 @@
 .GridModuleWrapper {
-    border: 2px solid red;
+    position: relative;
     border-radius: 12px;
-    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    box-shadow: rgba(0, 0, 0, 0.177) 0px 3px 8px;
     overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #cbcbcb;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 10;
+    
+    &.overlayVisible {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.overlayContent {
+    text-align: center;
+    padding: 1.5rem;
+    max-width: 80%;
+}
+
+.overlayMessage {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.4;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }

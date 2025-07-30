@@ -6,7 +6,6 @@ const CV = () => {
     const [isHovered, setIsHovered] = useState(false);
 
     const handleDownload = () => {
-        // Create a temporary link element to trigger download
         const link = document.createElement('a');
         link.href = cvPdf;
         link.download = 'Matheus_Toscano_CV_2025.pdf';
@@ -26,7 +25,6 @@ const CV = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            {/* PDF Preview using iframe */}
             <div className={styles.pdfPreview}>
                 <iframe
                     src={`${cvPdf}#toolbar=0&navpanes=0&scrollbar=0`}
@@ -34,8 +32,6 @@ const CV = () => {
                     title="CV Preview"
                 />
             </div>
-
-            {/* Overlay with action buttons */}
             {isHovered && (
                 <div className={styles.overlay}>
                     <div className={styles.actions}>
