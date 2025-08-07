@@ -7,6 +7,7 @@ import Socials from "../Socials";
 import Description from "../Description";
 import CV from "../CV";
 import ProjectsList from "../ProjectsList";
+import PersonalGif from "../PersonalGif";
 
 interface GridWrapperProps {
     columns?: number;
@@ -32,11 +33,11 @@ const GridWrapper = ({
             {children || (
                 <>
                     <GridModuleWrapper 
-                        title="Module 1" 
+                        title="Personal GIF" 
                         cols={[1, 3]} 
                         rows={[1, 3]} 
-                        children="Module 1"
-                        overlayMessage="That's me"
+                        children={<PersonalGif/>}
+                        overlayMessage="That's me in action! 🎬"
                     />
                     <GridModuleWrapper 
                         title="CV" 
