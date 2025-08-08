@@ -98,3 +98,82 @@
 .socialLink[aria-label*="Instagram"]:hover {
     color: #e4405f;
 }
+
+// Mobile-first responsive design
+@media (max-width: 768px) {
+    .Socials {
+        padding: 0.5rem;
+    }
+    
+    .socialGrid {
+        gap: 0.2rem; // Smaller gap on mobile
+    }
+    
+    .socialLink {
+        padding: 0.5rem; // Smaller padding
+        border-radius: 8px;
+        
+        // Disable hover effects on mobile for better performance
+        &:hover {
+            background-color: transparent;
+            transform: none;
+        }
+    }
+    
+    .iconWrapper {
+        width: 20px; // Smaller icons
+        height: 20px;
+    }
+    
+    .divider {
+        width: 1px; // Thinner dividers
+        height: 20px;
+        margin: 0 0.3rem; // Less margin
+    }
+}
+
+@media (max-width: 480px) {
+    .Socials {
+        padding: 0.3rem;
+    }
+    
+    .socialGrid {
+        gap: 0.1rem;
+    }
+    
+    .socialLink {
+        padding: 0.4rem;
+        border-radius: 6px;
+    }
+    
+    .iconWrapper {
+        width: 18px; // Even smaller icons
+        height: 18px;
+    }
+    
+    .divider {
+        height: 18px;
+        margin: 0 0.2rem;
+    }
+}
+
+// For very compact modules (1 row height = 80px)
+@media (max-width: 768px) {
+    .Socials[data-compact="true"] {
+        padding: 0.2rem;
+        
+        .socialLink {
+            padding: 0.3rem;
+        }
+        
+        .iconWrapper {
+            width: 16px;
+            height: 16px;
+        }
+        
+        .divider {
+            height: 16px;
+            margin: 0 0.15rem;
+        }
+    }
+}

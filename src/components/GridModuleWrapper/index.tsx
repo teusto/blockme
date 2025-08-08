@@ -13,6 +13,10 @@ interface GridModuleWrapperProps {
     title: string;
     cols?: GridPosition;
     rows?: GridPosition;
+    colsMobile?: GridPosition;
+    rowsMobile?: GridPosition;
+    colsTablet?: GridPosition;
+    rowsTablet?: GridPosition;
     className?: string;
     overlayMessage?: string;
 }
@@ -45,6 +49,10 @@ const GridModuleWrapper = ({
     title, 
     cols, 
     rows, 
+    colsMobile,
+    rowsMobile,
+    colsTablet,
+    rowsTablet,
     className,
     overlayMessage 
 }: GridModuleWrapperProps) => {
@@ -53,8 +61,13 @@ const GridModuleWrapper = ({
     
     const gridStyle = {
         gridColumn: formatGridPosition(cols),
-        gridRow: formatGridPosition(rows)
-    };
+        gridRow: formatGridPosition(rows),
+        // CSS custom properties for responsive grid positioning
+        '--grid-column-mobile': formatGridPosition(colsMobile),
+        '--grid-row-mobile': formatGridPosition(rowsMobile),
+        '--grid-column-tablet': formatGridPosition(colsTablet),
+        '--grid-row-tablet': formatGridPosition(rowsTablet)
+    } as React.CSSProperties;
 
     const handleMouseEnter = () => {
         if (overlayMessage) {

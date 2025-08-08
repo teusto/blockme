@@ -41,13 +41,59 @@
     }
 }
 
-// Responsive adjustments
+// Mobile-first responsive adjustments
 @media (max-width: 768px) {
     .PersonalGif {
         border-radius: 8px;
+        min-height: 200px;
+        
+        // Ensure video doesn't get too small on mobile
+        .videoContainer {
+            min-height: 200px;
+        }
     }
     
     .video {
         border-radius: 8px;
+        
+        // Disable hover effects on mobile for better performance
+        &:hover {
+            transform: none;
+        }
+        
+        // Ensure video plays properly on mobile
+        &::-webkit-media-controls-start-playback-button {
+            display: none !important;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .PersonalGif {
+        border-radius: 6px;
+        min-height: 180px;
+        
+        .videoContainer {
+            min-height: 180px;
+        }
+    }
+    
+    .video {
+        border-radius: 6px;
+    }
+}
+
+// Tablet adjustments
+@media (min-width: 769px) and (max-width: 1024px) {
+    .PersonalGif {
+        border-radius: 10px;
+    }
+    
+    .video {
+        border-radius: 10px;
+        
+        &:hover {
+            transform: scale(1.01); // Reduced hover effect on tablets
+        }
     }
 }

@@ -6,4 +6,37 @@
     gap: .6rem;
     padding: .6rem;
     font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+    
+    // Mobile-first responsive design
+    @media (max-width: 768px) {
+        height: auto;
+        min-height: 100vh;
+        grid-template-columns: repeat(10, 1fr); // 10-column mobile grid for flexibility
+        grid-template-rows: repeat(20, minmax(35px, 70px)); // 20 rows with minimum 35px height
+        gap: 0.6rem;
+        padding: 1rem;
+        
+        // Allow modules to use their custom mobile positioning with smaller min-height
+        > * {
+            min-height: 35px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        grid-template-rows: repeat(25, minmax(30px, 60px)); // Even more rows for very small screens
+        gap: 0.4rem;
+        padding: 0.8rem;
+        
+        > * {
+            min-height: 30px;
+        }
+    }
+    
+    // Tablet adjustments
+    @media (min-width: 769px) and (max-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 0.8rem;
+        padding: 0.8rem;
+    }
 }

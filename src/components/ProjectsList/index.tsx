@@ -23,6 +23,11 @@ const projects: Project[] = [
         stack: ['blockchain', 'frontend', 'backend']
     },
     {
+        title: "Gossip",
+        description: "Social app where user can share anonymous gossip and get paid when it's revealed.",
+        stack: ['blockchain', 'web3', 'frontend']
+    },
+    {
         title: "Domenica",
         description: "Domanica creative agency website.",
         stack: ['frontend', 'web3']

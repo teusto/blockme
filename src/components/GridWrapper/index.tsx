@@ -36,6 +36,10 @@ const GridWrapper = ({
                         title="Personal GIF" 
                         cols={[1, 3]} 
                         rows={[1, 3]} 
+                        colsMobile={[1, 6]}
+                        rowsMobile={[1, 5]}
+                        colsTablet={[1, 2]}
+                        rowsTablet={[1, 2]}
                         children={<PersonalGif/>}
                         overlayMessage="That's me in action! 🎬"
                     />
@@ -43,6 +47,10 @@ const GridWrapper = ({
                         title="CV" 
                         cols={[3, 6]} 
                         rows={[1, 4]} 
+                        colsMobile={[1, 10]}
+                        rowsMobile={[20, 26]}
+                        colsTablet={[2, 4]}
+                        rowsTablet={[1, 3]}
                         children={<CV/>}
                         overlayMessage="View or Download my CV - Theres more information but tbh trust me Im the right person for the job"
                     />
@@ -50,6 +58,10 @@ const GridWrapper = ({
                         title="Clock" 
                         cols={[8, 10]} 
                         rows={[1, 2]} 
+                        colsMobile={[6, 10]}
+                        rowsMobile={[1, 2]}
+                        colsTablet={[1, 2]}
+                        rowsTablet={[3, 4]}
                         children={<Clock/>}
                         overlayMessage="You know what time it is? It's time for us to work together!"
                     />
@@ -57,6 +69,10 @@ const GridWrapper = ({
                         title="Location" 
                         cols={[6, 8]} 
                         rows={[1, 2]} 
+                        colsMobile={[6, 10]}
+                        rowsMobile={[2, 3]}
+                        colsTablet={[2, 3]}
+                        rowsTablet={[3, 4]}
                         children={<Location/>}
                         overlayMessage="Lisbon, Portugal - Where I'm based (for now)"
                     />
@@ -64,6 +80,10 @@ const GridWrapper = ({
                         title="Socials" 
                         cols={[1, 3]} 
                         rows={[3, 4]} 
+                        colsMobile={[1, 10]}
+                        rowsMobile={[5, 6]}
+                        colsTablet={[1, 3]}
+                        rowsTablet={[4, 5]}
                         children={<Socials/>}
                         overlayMessage="Go stalk me on socials a little bit"
                     />
@@ -71,6 +91,10 @@ const GridWrapper = ({
                         title="Projects" 
                         cols={[6, 10]} 
                         rows={[2, 4]} 
+                        colsMobile={[1, 10]}
+                        rowsMobile={[6, 12]}
+                        colsTablet={[1, 4]}
+                        rowsTablet={[5, 7]}
                         children={<ProjectsList/>}
                         overlayMessage="Some of my recent work or stuff that I liked to do"
                     />
@@ -78,6 +102,10 @@ const GridWrapper = ({
                         title="About" 
                         cols={[1, 7]} 
                         rows={[4, 6]} 
+                        colsMobile={[1, 10]}
+                        rowsMobile={[12, 20]}
+                        colsTablet={[1, 4]}
+                        rowsTablet={[7, 9]}
                         children={<Description/>}
                         overlayMessage="It's me, and it's all true"
                     />
@@ -85,8 +113,12 @@ const GridWrapper = ({
                         title="Camera" 
                         cols={[7, 10]} 
                         rows={[4, 6]} 
+                        colsMobile={[6, 10]}
+                        rowsMobile={[3, 5]}
+                        colsTablet={[1, 4]}
+                        rowsTablet={[9, 10]}
                         children={<Camera/>}
-                        overlayMessage="That's the person who's hiring me"
+                        overlayMessage="That's the person who will be working with me"
                     />
                 </>
             )}

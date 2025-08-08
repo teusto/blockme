@@ -18,3 +18,39 @@
     text-align: center;
     line-height: 1;
 }
+
+// Mobile-first responsive design
+@media (max-width: 768px) {
+    .Clock {
+        padding: 0.5rem;
+    }
+    
+    .time {
+        font-size: 2.5rem; // Much smaller for mobile
+        font-weight: 500;
+        letter-spacing: 0.05em;
+    }
+}
+
+@media (max-width: 480px) {
+    .Clock {
+        padding: 0.3rem;
+    }
+    
+    .time {
+        font-size: 2rem; // Even smaller for tiny screens
+        font-weight: 500;
+    }
+}
+
+// For very compact modules (1 row height = 80px)
+@media (max-width: 768px) {
+    .Clock[data-compact="true"] {
+        padding: 0.2rem;
+        
+        .time {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+    }
+}
