@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './CV.module.scss';
-import cvPdf from '../../../public/Matheus_Toscano__CV__2025.pdf';
+import cvPdf from '/Matheus_Toscano__CV__2025.pdf';
 
 const CV = () => {
     const [isHovered, setIsHovered] = useState(false);
